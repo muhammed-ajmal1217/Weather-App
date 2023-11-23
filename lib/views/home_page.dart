@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/controller/list_controller.dart';
 import 'package:myapp/controller/location_controller.dart';
-import 'package:myapp/controller/weather_controller.dart';
 import 'package:myapp/controller/provider.dart';
+import 'package:myapp/service/city_weather_api_service.dart';
 import 'package:provider/provider.dart';
 
 
@@ -21,6 +21,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     getCurrentLocation(context);
   }
+
+  CityWeatherApiService cityWeather=CityWeatherApiService();
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                                 child: TextFormField(
                                   onFieldSubmitted: (String city) {
                                      pro.cityname = city;
-                                      getCityWeather(pro.cityname,context);
+                                      cityWeather.getCityWeather(pro.cityname,context);
                                       pro.isLoaded = false; 
                                   },
                                   controller: searchControl,
