@@ -1,10 +1,10 @@
   import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:myapp/provider/provider.dart';
+import 'package:myapp/controller/provider.dart';
 import 'package:provider/provider.dart';
 
 getCurrentLocation(BuildContext context) async {
-    final pro = Provider.of<CityWhetherProvider>(context,listen: false);
+    final pro = Provider.of<CityWeatherProvider>(context,listen: false);
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();

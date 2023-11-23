@@ -1,8 +1,5 @@
   import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-
-
   Container weatherList(BuildContext context, {String? image, String? text,String? text1}) {
     return Container(
       width: 170,

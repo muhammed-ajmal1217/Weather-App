@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/controller/list_controller.dart';
 import 'package:myapp/controller/location_controller.dart';
 import 'package:myapp/controller/weather_controller.dart';
-import 'package:myapp/provider/provider.dart';
+import 'package:myapp/controller/provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Consumer<CityWhetherProvider>(
+                child: Consumer<CityWeatherProvider>(
                   builder: (context, pro, child) => 
                    Column(
                     children: [

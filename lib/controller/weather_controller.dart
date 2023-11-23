@@ -1,23 +1,30 @@
-  import 'package:flutter/material.dart';
-import 'package:myapp/provider/provider.dart';
+import 'package:flutter/material.dart';
+import 'package:myapp/controller/provider.dart';
+import 'package:myapp/model/model.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import '../constants/constants.dart' as k;
 import 'dart:convert';
 
-getCityWeather(String cityname,BuildContext context) async {
-    final pro = Provider.of<CityWhetherProvider>(context,listen: false);
+Future<void> getCityWeather(String cityname, BuildContext context) async {
+  try {
+    final pro = Provider.of<CityWeatherProvider>(context, listen: false);
     var client = http.Client();
-    var uri = '${k.domain}q=${cityname}&appid=${k.apiKey}';
+    var uri = '${k.domain}q=$cityname&appid=${k.apiKey}';
     var url = Uri.parse(uri);
-    var respose = await client.get(url);
-    if (respose.statusCode == 200) {
-      var data = respose.body;
+    var response = await client.get(url);
+
+    if (response.statusCode == 200) {
+      var data = response.body;
       var decodedData = json.decode(data);
-      print(data);
-      pro.updateUi(decodedData);
-        pro.isLoaded = true;
+      WeatherModel weatherModel = WeatherModel.fromJson(decodedData);
+
+      pro.updateUi(weatherModel);
+      pro.isLoaded = true;
     } else {
-      print(respose.statusCode);
+      print('Failed to fetch weather data. Status code: ${response.statusCode}');
     }
+  } catch (error) {
+    print('Error fetching weather data: $error');
   }
+}
