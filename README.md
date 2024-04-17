@@ -14,6 +14,6 @@ a simple interface.
 ### Installation
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/muhammed-ajmal1217/Movie_Stack.git
+git clone https://github.com/muhammed-ajmal1217/Weather_info.git
 
 
