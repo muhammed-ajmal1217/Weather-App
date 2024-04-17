@@ -1,16 +1,19 @@
-# myapp
+# Weather Info
 
-A new Flutter project.
+## Overview
+The weather app uses the OpenWeather API to give you real-time weather updates and accurate forecasts. You can
+check current conditions, hourly and daily forecasts, and get weather info based on your location. It’s easy to use with
+a simple interface.
+
+## Features
+1. **Real-Time Weather Updates**:  The app provides real-time weather updates sourced from the OpenWeather API, ensuring users have access to the latest weather information.
+2. **Location-Based Weather**: Users can obtain weather information based on their current location, eliminating the need to manually input location data. This feature enhances convenience and relevance for users, as they receive weather updates tailored to their whereabouts.
+3. **Integration with OpenWeather API**:  The app seamlessly integrates with the OpenWeather API, leveraging its extensive weather data and services to provide comprehensive and reliable weather information to users.
 
 ## Getting Started
+### Installation
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/muhammed-ajmal1217/Movie_Stack.git
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
